@@ -1,3 +1,8 @@
+import 'package:Tricon/login/background.dart';
+import 'package:Tricon/login/login.dart';
+import 'package:Tricon/login/loginUi.dart';
+import 'package:Tricon/login/signup.dart';
+import 'package:Tricon/login/welcome.dart';
 import 'package:Tricon/modules/main_page.dart';
 import 'package:Tricon/screen/Emergency.dart';
 import 'package:Tricon/screen/book_emergency.dart';
@@ -24,6 +29,8 @@ import 'screen/book_appointment.dart';
       '/officers' : (context) => Officers(),
       '/book_emergency' : (context) => Emergency(),
       '/emergency' : (context) => EmergencyUnits(),
+       '/signin' : (context) => LoginPage(),
+        '/signup' : (context) => SignupPage(),
     },
   ));
 }
@@ -32,7 +39,9 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      resizeToAvoidBottomPadding: false,
+      backgroundColor: Colors.white,
+     /*  appBar: AppBar(
         title: Row(
           textDirection: TextDirection.ltr,
           children: <Widget>[
@@ -60,10 +69,16 @@ class Home extends StatelessWidget {
         ),
         backgroundColor: Colors.green[900],
       ),
-      drawer: MainDrawer(),
+      drawer: MainDrawer(), */
       body: Center(
-       child: MainPage(),
-      ),
+       child: Stack(
+          children: <Widget>[
+            Background(),
+            LoginPage (),
+          ],
+        )
+        ),
+     
     );
   }
 }

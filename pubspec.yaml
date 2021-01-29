@@ -33,6 +33,7 @@ dependencies:
   # sqflite: ^1.1.3
   # path_provider: any
   intl: ^0.15.7
+  intro_slider: ^2.3.3
 dev_dependencies:
   flutter_test:
     sdk: flutter
